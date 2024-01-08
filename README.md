@@ -4,6 +4,17 @@
 
 In this project we learn about how to qualify trees as well as how to traverse them.
 
+## Resources
+[Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
+
+[Data Structure and Algorithms-Tree](https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm)
+
+[Tree Traversal](https://www.tutorialspoint.com/data_structures_algorithms/tree_traversal.htm)
+
+[Binary Search Tree](https://en.wikipedia.org/wiki/Binary_search_tree)
+
+[Data Structures: Binary Tree](https://www.youtube.com/watch?v=H5JubkIy_p8)
+
 ## Requirements
 
 General:
@@ -23,10 +34,21 @@ General:
 
 ## Header File
 
-* [binary_trees.h]
+*binary_trees.h*
 
-Data Structures:
+## Data Structures
+The following data structures and types for binary trees are used in this project.
 
+### Basic Binary Tree
+```
+/**
+ * struct binary_tree_s - Binary tree node
+ *
+ * @n: Integer stored in the node
+ * @parent: Pointer to the parent node
+ * @left: Pointer to the left child node
+ * @right: Pointer to the right child node
+ */
 struct binary_tree_s
 {
     int n;
@@ -36,12 +58,22 @@ struct binary_tree_s
 };
 
 typedef struct binary_tree_s binary_tree_t;
+```
+### Binary Search Tree
+```
 typedef struct binary_tree_s bst_t;
+```
+### AVL Tree
+```
 typedef struct binary_tree_s avl_t;
+```
+### Max Binary Heap
+```
 typedef struct binary_tree_s heap_t;
-
-Prototypes:
-
+```
+## Prototypes
+The following prototypes are used in this project:
+```
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
@@ -79,7 +111,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
-
+```
 ## Tasks
 
 0. New node
@@ -159,7 +191,6 @@ Write a function that measures the size of a binary tree
 - Write a function that finds the uncle of a node
 
 ## Authors
-
 - [Nicole Alicea](https://github.com/Nicole-Alicea)
 - [Mitzael Pitre](https://github.com/MitzaelPitre)
 - [Raphael apellido](git hub account)
