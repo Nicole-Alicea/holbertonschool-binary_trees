@@ -11,6 +11,7 @@
 void enqueue(queue_t *q, const binary_tree_t *node)
 {
 	queue_node_t *new_node = (queue_node_t *)malloc(sizeof(queue_node_t));
+
 	if (!new_node)
 	{
 		fprintf(stderr, "Memory allocation error\n");
@@ -18,7 +19,7 @@ void enqueue(queue_t *q, const binary_tree_t *node)
 	}
 	new_node->node = node;
 	new_node->next = NULL;
-	
+
 	if (!q->front)
 	{
 		q->front = q->rear = new_node;
@@ -51,7 +52,7 @@ const binary_tree_t *dequeue(queue_t *q)
 
 	q->front = q->front->next;
 	free(temp);
-	
+
 	return (node);
 }
 
