@@ -45,8 +45,19 @@ struct queue
 
 typedef struct queue queue;
 
-void binary_tree_print(const binary_tree_t *);
+typedef struct queue_node
+{
+	const binary_tree_t *node;
+	struct queue_node *next;
+} queue_node_t;
 
+typedef struct
+{
+	queue_node_t *front;
+	queue_node_t *rear;
+} queue_t;
+
+void binary_tree_print(const binary_tree_t *);
 
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 
