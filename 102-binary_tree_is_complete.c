@@ -19,18 +19,25 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	while (front < rear)
 	{
 		current = queue[front++];
-		
-		if ((current->left == NULL && (flag = 1)) || (flag && free(queue)))
-		{
-			return (0);
-		}
-		queue[rear++] = current->left;
 
-		if ((current->right == NULL && (flag = 1)) || (flag && free(queue)))
-		{
-			return (0);
-		}
-		queue[rear++] = current->right;
+		 if (!current->left)
+			 flag = 1;
+		 else if (flag)
+		 {
+			 free(queue);
+			 return (0);
+		 }
+		 else
+			 queue[rear++] = current->left;
+		 if (!current->right)
+			 flag = 1;
+		 else if (flag)
+		 {
+			 free(queue);
+			 return (0);
+		 }
+		 else
+			 queue[rear++] = current->right;
 	}
 	free(queue);
 	return (1);
